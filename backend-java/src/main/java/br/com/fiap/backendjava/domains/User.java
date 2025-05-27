@@ -1,5 +1,6 @@
 package br.com.fiap.backendjava.domains;
 
+import br.com.fiap.backendjava.Endereco;
 import br.com.fiap.backendjava.domains.enums.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

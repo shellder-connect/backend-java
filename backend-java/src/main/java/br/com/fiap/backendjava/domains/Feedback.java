@@ -41,8 +41,6 @@ public class Feedback {
     private User idUsuario;
 
     @ManyToOne
-    @JoinColumn(name = "id_avaliado", nullable = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
     private User idAvaliado;
-
-
 }
