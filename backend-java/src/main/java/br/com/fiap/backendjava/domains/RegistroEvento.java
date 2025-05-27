@@ -20,27 +20,26 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "T_Feedbacks")
-public class Feedback {
+@Table(name = "T_Registro_Evento")
+public class RegistroEvento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_feedback", nullable = false)
+    @Column(name = "id_registro_evento", nullable = false)
     private Integer id;
 
-    private Integer nota;
+    private String descricao;
 
-    @Column(length = 500)
-    private String comentario;
-
-    @Column(name = "data_feedback", nullable = false)
-    private LocalDateTime dataFeedback;
+    @Column(name = "data_hora", nullable = false)
+    private LocalDateTime dataHora;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario")
     private User idUsuario;
 
+    private String localizacao;
+
     @ManyToOne
-    @JoinColumn(name = "id_avaliado", nullable = false)
-    private User idAvaliado;
+    @JoinColumn(name = "id_abrigo")
+    private Abrigo idAbrigo;
 }

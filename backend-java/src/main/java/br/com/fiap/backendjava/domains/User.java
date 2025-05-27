@@ -1,6 +1,5 @@
 package br.com.fiap.backendjava.domains;
 
-import br.com.fiap.backendjava.Endereco;
 import br.com.fiap.backendjava.domains.enums.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +8,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -44,13 +45,16 @@ public class User {
 
     private String telefone;
 
+    @ManyToOne
+    @JoinColumn(name = "id_endereco", nullable = false)
     private Endereco idEndereco;
 
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @Column(length = 20)
     private String documento;
 
     @Column(nullable = false)
-    private Boolean isAtivo;
-
+    private Boolean status;
 }
