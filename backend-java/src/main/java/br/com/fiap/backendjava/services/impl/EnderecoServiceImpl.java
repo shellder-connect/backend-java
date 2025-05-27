@@ -1,8 +1,8 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.domains.Endereco;
-import br.com.fiap.backendjava.gateways.services.EnderecoService;
+import br.com.fiap.backendjava.services.EnderecoService;
 
 import java.util.List;
 

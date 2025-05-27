@@ -1,7 +1,7 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Feedback;
-import br.com.fiap.backendjava.gateways.services.FeedbackService;
+import br.com.fiap.backendjava.services.FeedbackService;
 
 import java.util.List;
 

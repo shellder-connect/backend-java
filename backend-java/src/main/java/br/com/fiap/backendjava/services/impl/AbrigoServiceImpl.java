@@ -1,7 +1,7 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Abrigo;
-import br.com.fiap.backendjava.gateways.services.AbrigoService;
+import br.com.fiap.backendjava.services.AbrigoService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

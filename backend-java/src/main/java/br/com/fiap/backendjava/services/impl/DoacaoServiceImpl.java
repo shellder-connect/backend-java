@@ -1,7 +1,7 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Doacao;
-import br.com.fiap.backendjava.gateways.services.DoacaoService;
+import br.com.fiap.backendjava.services.DoacaoService;
 
 import java.util.List;
 

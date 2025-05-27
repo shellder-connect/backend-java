@@ -1,7 +1,7 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Categoria;
-import br.com.fiap.backendjava.gateways.services.CategoriaService;
+import br.com.fiap.backendjava.services.CategoriaService;
 
 import java.util.List;
 

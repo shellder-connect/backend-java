@@ -1,7 +1,7 @@
-package br.com.fiap.backendjava.gateways.services.impl;
+package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.RegistroEvento;
-import br.com.fiap.backendjava.gateways.services.RegistroEventoService;
+import br.com.fiap.backendjava.services.RegistroEventoService;
 
 import java.util.List;
 

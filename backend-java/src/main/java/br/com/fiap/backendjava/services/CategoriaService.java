@@ -1,4 +1,4 @@
-package br.com.fiap.backendjava.gateways.services;
+package br.com.fiap.backendjava.services;
 
 import br.com.fiap.backendjava.domains.Abrigo;
 import br.com.fiap.backendjava.domains.Categoria;

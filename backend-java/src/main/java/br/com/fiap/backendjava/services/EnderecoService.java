@@ -1,4 +1,4 @@
-package br.com.fiap.backendjava.gateways.services;
+package br.com.fiap.backendjava.services;
 
 import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.domains.Endereco;
