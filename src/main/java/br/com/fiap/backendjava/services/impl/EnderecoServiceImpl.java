@@ -1,6 +1,5 @@
 package br.com.fiap.backendjava.services.impl;
 
-import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.services.EnderecoService;
 
@@ -13,7 +12,7 @@ public class EnderecoServiceImpl implements EnderecoService {
     }
 
     @Override
-    public Doacao buscarPorId(Integer id) {
+    public Endereco buscarPorId(Integer id) {
         return null;
     }
 

@@ -1,0 +1,19 @@
+<div class="topnav" th:fragment="navigation">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <a href="/" th:text="#{nav.inicio}">Início</a>
+    <a href="/abrigos" th:text="#{nav.abrigos}">Abrigos</a>
+    <a href="/categorias" th:text="#{nav.categorias}">Categorias</a>
+    <a href="/doacoes" th:text="#{nav.doacoes}">Doações</a>
+    <a href="/feedbacks" th:text="#{nav.feedbacks}">Feedbacks</a>
+    <a href="/registro-eventos" th:text="#{nav.registro_eventos}">Registro de Eventos</a>
+    <a href="/usuarios" th:text="#{nav.usuarios}">Usuários</a>
+
+    <form th:action="@{/logout}" method="post" class="logout-form">
+        <button type="submit" class="logout-button" th:text="#{nav.logout}">Logout</button>
+    </form>
+
+    <div style="float: right; margin-right: 1rem;">
+        <a href="?lang=pt">🇧🇷</a>
+        <a href="?lang=en">🇺🇸</a>
+    </div>
+</div>

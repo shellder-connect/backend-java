@@ -8,7 +8,7 @@ import java.util.List;
 public interface EnderecoService {
     Endereco criar(Endereco endereco);
 
-    Doacao buscarPorId(Integer id);
+    Endereco buscarPorId(Integer id);
 
     List<Endereco> buscarTodos();
 

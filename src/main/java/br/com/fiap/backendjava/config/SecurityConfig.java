@@ -36,7 +36,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth
                                 .requestMatchers("/", "/styles/**", "/actuator/**").permitAll()
-                                .requestMatchers("/voluntario/**").hasAnyRole("ADMIN", "VOLUNTARIO")
+                                .requestMatchers("/abrigos/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/categorias/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/doacoes/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/feedbacks/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/registro-eventos/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/usuarios/**").hasAnyRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

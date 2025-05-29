@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --cor-preto: #000000;
+    --cor-gradiente-100: #002820;
+    --cor-gradiente-66: #004034;
+    --cor-gradiente-50: #005146;
+    --cor-gradiente-30: #0C6156;
+    --cor-gradiente-0: #3C8377;
+    --cor-verde-lima: #E2E23F;
+    --cor-cinza-claro: #E2E2E2;
+    --cor-branco: #ffffff;
+}
+
+body {
+    background: linear-gradient(
+            to bottom,
+            var(--cor-gradiente-0) 0%,
+            var(--cor-gradiente-30) 30%,
+            var(--cor-gradiente-66) 66%,
+            var(--cor-gradiente-100) 100%
+    );
+    /*color: #fd920b;*/
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* DASHBOARD */
+.dashboard-container {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO NOVO CLIENTE */
+.dashboard-actions {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* TABELA */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.dashboard-table th {
+    background: linear-gradient(
+            to bottom,
+            var(--cor-gradiente-0) 0%,
+            var(--cor-gradiente-30) 30%,
+            var(--cor-gradiente-66) 66%,
+            var(--cor-gradiente-100) 100%
+    );
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.dashboard-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* AÇÕES */
+.table-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-editar,
+.btn-deletar {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #007bff;
+}
+
+.btn-editar:hover {
+    background-color: #0056b3;
+}
+
+.btn-deletar {
+    background-color: #ff5468;
+}
+
+.btn-deletar:hover {
+    background-color: #dc4c5d;
+}
+
+/* NAVBAR */
+.topnav {
+    background-color: #0065FF; /* Fundo azul */
+    overflow: hidden;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.topnav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+/* LOGO */
+.logo {
+    height: 30px; /* Ajuste o tamanho da logo */
+    margin-right: 20px;
+}
+
+.btn-alterar-status {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-alterar-status:hover {
+    background-color: #1565c0;
+}
+
+
+/* LINKS */
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: 0.6s ease;
+}
+
+/* HOVER */
+.topnav a:hover {
+    font-size: 1.3em;
+}
+
+.footer {
+    background-color: var(--cor-gradiente-100); /* Fundo cinza claro */
+    color: var(--cor-branco); /* Cor do texto */
+    text-align: center; /* Centralizar texto */
+    padding: 30px 0; /* Espaçamento interno */
+}
+
+.footer b {
+    font-size: 1.2em; /* Tamanho do título */
+    font-weight: 700; /* Negrito */
+}
+
+.footer p {
+    margin: 10px 0; /* Espaçamento entre os textos */
+    font-weight: 400; /* Peso médio da fonte */
+}
+
+/* CONTAINER PRINCIPAL */
+.home-container {
+    text-align: center;
+    background: linear-gradient(
+            to bottom,
+            var(--cor-gradiente-0) 0%,
+            var(--cor-gradiente-30) 30%,
+            var(--cor-gradiente-66) 66%,
+            var(--cor-gradiente-100) 100%
+    );
+    color: white;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*//TODO: deixar pra direita*/
+.logout {
+    text-align: end;
+}
+
+/* TÍTULO PRINCIPAL */
+.home-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.home-subtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/* FORMULÁRIO */
+.login-form {
+    background-color: var(--cor-branco);
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* CAMPOS DE INPUT */
+.login-form label {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--cor-gradiente-66);
+    display: block;
+    margin-bottom: 7px;
+}
+
+.login-form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cor-cinza-claro);
+    border-radius: 5px;
+    font-size: 1.3em;
+
+}
+
+/* BOTÃO */
+.login-form button {
+    width: 95%;
+    background-color: var(--cor-gradiente-30);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: var(--cor-gradiente-50);
+}
+
+/* ESTILIZAÇÃO DA PÁGINA DE EDIÇÃO */
+.edit-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.edit-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #003ea6;
+    margin-bottom: 20px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-form label {
+    font-weight: 600;
+    color: #003ea6;
+    text-align: left;
+}
+
+.edit-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-salvar {
+    background-color: #003ea6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-salvar:hover {
+    background-color: #002766;
+}
+
+.btn-voltar {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #b02a37;
+}
+
+/* ESTILIZAÇÃO DA PÁGINA DE CADASTRO */
+.create-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.create-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #003ea6;
+    margin-bottom: 20px;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-form label {
+    font-weight: 600;
+    color: #003ea6;
+    text-align: left;
+}
+
+.create-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.create-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-cadastrar {
+    background-color: #003ea6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+    background-color: #002766;
+}
+
+.btn-voltar {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #b02a37;
+}
+
+/* CONTAINER DA LISTAGEM DE FEEDBACKS */
+.feedback-container-feedback {
+    width: 70%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER: TÍTULO + BOTÃO NOVO */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feedback-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #003ea6;
+}
+
+/* BOTÃO NOVO FEEDBACK */
+.btn-novo {
+    background-color: #003ea6;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-novo:hover {
+    background-color: #002766;
+}
+
+/* TABELA DE FEEDBACK */
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.feedback-table th, .feedback-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.feedback-table th {
+    background-color: #003ea6;
+    color: white;
+}
+
+.feedback-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.feedback-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* BOTÕES DE AÇÃO */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #ff5468;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #dc4c5d;
+}
+
+/* TÍTULO */
+.feedback-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #003ea6;
+    margin-bottom: 20px;
+}
+
+/* FORMULÁRIO */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* LABELS */
+.feedback-form label {
+    font-weight: 600;
+    color: #003ea6;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* INPUTS E SELECT */
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* TEXTAREA */
+.feedback-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* BOTÕES */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #003ea6;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #002766;
+}
+
+.btn-back {
+    background-color: #ccc;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #999;
+}
+
+/* Container do Formulário */
+.feedback-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.feedback-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Informações do Cliente */
+.feedback-info p {
+    background: #e3e6f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.clinica-info p {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.logout-form {
+    margin-left: auto;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 15px;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+
+.table-header-consulta{
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* HOVER */
+.logout-button :hover {
+    font-size: 1.3em;
+}
+
+/* Campos do Formulário */
+.feedback-form label {
+    font-weight: 500;
+    display: block;
+    margin-top: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.feedback-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Botões */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #0065ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #004ab3;
+}
+
+.btn-back {
+    text-decoration: none;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #c0c0c0;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
