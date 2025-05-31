@@ -1,0 +1,28 @@
+name: Sync GitHub Repo to Azure DevOps
+
+on:
+  push:
+    branches:
+      - '**'  # Agora qualquer branch que receber push vai sincronizar
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Faz clone completo para evitar erros no push
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "patricianaomiyama@gmail.com"
+          git config --global user.name "Patricia Naomi"
+
+      - name: Push to Azure DevOps
+        env:
+          AZURE_PAT: ${{ secrets.AZURE_PAT }}
+        run: |
+          git remote add azure https://RM552981%40fiap.com.br:$AZURE_PAT@dev.azure.com/2TDSPR/Shellder%20Connection/_git/backend-java
+          git push azure --all --force
