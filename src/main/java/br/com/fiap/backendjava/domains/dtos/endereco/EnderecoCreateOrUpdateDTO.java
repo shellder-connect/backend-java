@@ -1,6 +1,6 @@
 package br.com.fiap.backendjava.domains.dtos.endereco;
 
-public record EnderecoCreateDTO(
+public record EnderecoCreateOrUpdateDTO(
 
         String rua,
         String numero,
