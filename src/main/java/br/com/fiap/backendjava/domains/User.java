@@ -23,11 +23,12 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "T_Usuario")
+@Table(name = "t_usuario")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario", nullable = false)
     private Integer id;
 
     @Column(nullable = false)
@@ -46,7 +47,7 @@ public class User {
     private String telefone;
 
     @ManyToOne
-    @JoinColumn(name = "id_endereco", nullable = false)
+    @JoinColumn(name = "id_endereco")
     private Endereco idEndereco;
 
     @Column(name = "data_nascimento")

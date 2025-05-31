@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "T_Registro_Evento")
+@Table(name = "t_registro_evento")
 public class RegistroEvento {
 
     @Id

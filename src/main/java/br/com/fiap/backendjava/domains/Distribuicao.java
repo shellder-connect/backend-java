@@ -13,28 +13,31 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
+@Table(name = "t_distribuicao")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "t_doacao")
-public class Doacao {
+public class Distribuicao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_doacao", nullable = false)
+    @Column(name = "id_distribuicao", nullable = false)
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "id_abrigo")
-    private Abrigo abrigo;
+    @JoinColumn(name = "id_doacao")
+    private Doacao doacao;
 
-    private String descricao;
+    private Integer qtdDestinada;
+
+    private LocalDate dataDistribuicao;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria")
-    private Categoria categoria;
-
-    private Integer quantidade;
+    @JoinColumn(name = "id_pessoa_atendida")
+    private User user;
 }

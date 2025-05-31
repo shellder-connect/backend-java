@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "T_Feedbacks")
+@Table(name = "t_feedbacks")
 public class Feedback {
 
     @Id
@@ -37,8 +37,8 @@ public class Feedback {
     private LocalDateTime dataFeedback;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
-    private User idUsuario;
+    @JoinColumn(name = "id_autor", nullable = false)
+    private User idAutor;
 
     @ManyToOne
     @JoinColumn(name = "id_avaliado", nullable = false)

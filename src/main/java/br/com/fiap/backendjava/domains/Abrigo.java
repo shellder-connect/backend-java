@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "T_Abrigo")
+@Table(name = "t_abrigo")
 public class Abrigo {
 
     @Id
@@ -31,5 +31,6 @@ public class Abrigo {
     @Column(name = "ocupacao_atual")
     private Integer ocupacaoAtual;
 
+    @Column(length = 100, nullable = false)
     private String descricao;
 }
