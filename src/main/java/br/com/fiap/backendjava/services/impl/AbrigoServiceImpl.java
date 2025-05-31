@@ -2,11 +2,15 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Abrigo;
 import br.com.fiap.backendjava.services.AbrigoService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class AbrigoServiceImpl implements AbrigoService {
     @Override
     public Abrigo criar(Abrigo abrigo) {

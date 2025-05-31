@@ -6,6 +6,7 @@ import br.com.fiap.backendjava.domains.enums.Role;
 import java.time.LocalDate;
 
 public record UserDetailDTO(
+        Integer id,
         String nome,
         String username,
         String telefone,

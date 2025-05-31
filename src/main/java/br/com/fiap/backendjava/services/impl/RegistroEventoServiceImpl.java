@@ -2,9 +2,13 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.RegistroEvento;
 import br.com.fiap.backendjava.services.RegistroEventoService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class RegistroEventoServiceImpl implements RegistroEventoService {
     @Override
     public RegistroEvento criar(RegistroEvento registroEvento) {

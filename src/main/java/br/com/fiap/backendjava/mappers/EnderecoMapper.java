@@ -8,16 +8,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class EnderecoMapper {
 
-    public Endereco toEntityFromEnderecoCreateDTO(EnderecoCreateOrUpdateDTO enderecoCreateOrUpdateDTO) {
+    public Endereco toEntityFromEnderecoCreateDTO(EnderecoCreateOrUpdateDTO dto) {
         return new Endereco(
                 null,
-                enderecoCreateOrUpdateDTO.rua(),
-                enderecoCreateOrUpdateDTO.numero(),
-                enderecoCreateOrUpdateDTO.bairro(),
-                enderecoCreateOrUpdateDTO.cidade(),
-                enderecoCreateOrUpdateDTO.estado(),
-                enderecoCreateOrUpdateDTO.cep(),
-                enderecoCreateOrUpdateDTO.complemento()
+                dto.rua(),
+                dto.numero(),
+                dto.bairro(),
+                dto.cidade(),
+                dto.estado(),
+                dto.cep(),
+                dto.complemento()
         );
     }
 

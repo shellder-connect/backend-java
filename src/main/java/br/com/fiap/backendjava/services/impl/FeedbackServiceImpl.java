@@ -2,9 +2,13 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Feedback;
 import br.com.fiap.backendjava.services.FeedbackService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class FeedbackServiceImpl implements FeedbackService {
     @Override
     public Feedback criar(Feedback feedback) {

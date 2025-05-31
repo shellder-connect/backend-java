@@ -2,9 +2,13 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.services.DoacaoService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class DoacaoServiceImpl implements DoacaoService {
 
     @Override
