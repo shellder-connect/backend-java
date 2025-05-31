@@ -1,12 +1,10 @@
-package br.com.fiap.backendjava.domains.dtos.user;
+package br.com.fiap.backendjava.gateways.dtos.user;
 
 import br.com.fiap.backendjava.domains.Endereco;
-import br.com.fiap.backendjava.domains.enums.Role;
 
 import java.time.LocalDate;
 
-public record UserDetailDTO(
-        Integer id,
+public record UserUpdateDTO(
         String nome,
         String username,
         String telefone,

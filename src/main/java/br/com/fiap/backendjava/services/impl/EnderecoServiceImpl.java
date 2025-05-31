@@ -2,7 +2,7 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.User;
-import br.com.fiap.backendjava.domains.dtos.endereco.EnderecoCreateOrUpdateDTO;
+import br.com.fiap.backendjava.gateways.dtos.endereco.EnderecoCreateOrUpdateDTO;
 import br.com.fiap.backendjava.domains.enums.Role;
 import br.com.fiap.backendjava.gateways.repositories.EnderecoRepository;
 import br.com.fiap.backendjava.gateways.repositories.UserRepository;
@@ -14,8 +14,6 @@ import br.com.fiap.backendjava.services.exception.AuthorizationException;
 import br.com.fiap.backendjava.services.exception.ObjectNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

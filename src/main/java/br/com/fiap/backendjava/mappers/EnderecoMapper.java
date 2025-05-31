@@ -1,8 +1,8 @@
 package br.com.fiap.backendjava.mappers;
 
 import br.com.fiap.backendjava.domains.Endereco;
-import br.com.fiap.backendjava.domains.dtos.endereco.EnderecoCreateOrUpdateDTO;
-import br.com.fiap.backendjava.domains.dtos.endereco.EnderecoDetailDTO;
+import br.com.fiap.backendjava.gateways.dtos.endereco.EnderecoCreateOrUpdateDTO;
+import br.com.fiap.backendjava.gateways.dtos.endereco.EnderecoDetailDTO;
 import org.springframework.stereotype.Component;
 
 @Component

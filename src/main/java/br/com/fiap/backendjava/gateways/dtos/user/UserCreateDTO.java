@@ -1,4 +1,4 @@
-package br.com.fiap.backendjava.domains.dtos.user;
+package br.com.fiap.backendjava.gateways.dtos.user;
 
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.enums.Role;

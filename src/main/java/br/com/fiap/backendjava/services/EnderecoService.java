@@ -1,9 +1,7 @@
 package br.com.fiap.backendjava.services;
 
 import br.com.fiap.backendjava.domains.Endereco;
-import br.com.fiap.backendjava.domains.dtos.endereco.EnderecoCreateOrUpdateDTO;
-
-import java.util.List;
+import br.com.fiap.backendjava.gateways.dtos.endereco.EnderecoCreateOrUpdateDTO;
 
 public interface EnderecoService {
 

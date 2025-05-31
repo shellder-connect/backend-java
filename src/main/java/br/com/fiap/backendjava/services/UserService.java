@@ -1,9 +1,9 @@
 package br.com.fiap.backendjava.services;
 
 import br.com.fiap.backendjava.domains.User;
-import br.com.fiap.backendjava.domains.dtos.user.UserCreateDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserDetailDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserUpdateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserCreateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.com.fiap.backendjava.domains.dtos.endereco;
+package br.com.fiap.backendjava.gateways.dtos.endereco;
 
 public record EnderecoDetailDTO(
         String rua,

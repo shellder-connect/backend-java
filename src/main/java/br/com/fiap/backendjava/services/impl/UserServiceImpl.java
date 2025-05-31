@@ -2,13 +2,11 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.User;
-import br.com.fiap.backendjava.domains.dtos.user.UserCreateDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserDetailDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserUpdateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserCreateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 import br.com.fiap.backendjava.domains.enums.Role;
-import br.com.fiap.backendjava.gateways.repositories.EnderecoRepository;
 import br.com.fiap.backendjava.gateways.repositories.UserRepository;
-import br.com.fiap.backendjava.mappers.EnderecoMapper;
 import br.com.fiap.backendjava.mappers.UserMapper;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
 import br.com.fiap.backendjava.security.UserDetailsServiceImpl;
@@ -27,9 +25,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private UserRepository repository;
-    private EnderecoRepository enderecoRepository;
     private UserMapper mapper;
-    private EnderecoMapper enderecoMapper;
     private PasswordEncoder passwordEncoder;
 
 

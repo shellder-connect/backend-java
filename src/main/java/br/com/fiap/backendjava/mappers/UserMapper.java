@@ -2,9 +2,9 @@ package br.com.fiap.backendjava.mappers;
 
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.User;
-import br.com.fiap.backendjava.domains.dtos.user.UserCreateDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserDetailDTO;
-import br.com.fiap.backendjava.domains.dtos.user.UserUpdateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserCreateDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
+import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 import org.springframework.stereotype.Component;
 
 @Component
