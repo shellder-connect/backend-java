@@ -9,4 +9,6 @@ public interface RegistroEventoService {
     RegistroEvento buscarPorId(Integer id);
 
     List<RegistroEvento> buscarTodos();
+
+    String gerarResumoEventos(List<RegistroEvento> eventos);
 }

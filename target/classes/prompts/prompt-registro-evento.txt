@@ -1,0 +1,11 @@
+Abaixo estão os registros de eventos ocorridos no sistema. Com base nessas informações, gere um resumo claro e conciso destacando os tipos de eventos mais frequentes, os locais mais envolvidos e quaisquer padrões ou observações relevantes. O objetivo é fornecer uma visão geral útil para o administrador entender as atividades mais comuns e áreas com maior incidência.
+
+Formato do dado:
+
+Descrição do evento
+
+Data e hora do evento
+
+Nome do usuário envolvido
+
+Localização (nome do abrigo, se aplicável)
