@@ -12,7 +12,7 @@
 <div class="abrigo-container">
     <div class="header-container">
         <h1 class="abrigo-title" th:text="#{evento.list.heading}">Lista de Eventos</h1>
-        <form th:action="@{/eventos/resumo-eventos}" method="get" style="display: inline;">
+        <form th:action="@{/registro-eventos/resumo-eventos}" method="get" style="display: inline;">
             <button type="submit" class="btn-novo" th:text="#{abrigo.list.gerarResumo}">Gerar Resumo</button>
         </form>
     </div>

@@ -6,6 +6,7 @@ import br.com.fiap.backendjava.domains.Distribuicao;
 import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.Feedback;
+import br.com.fiap.backendjava.domains.RegistroEvento;
 import br.com.fiap.backendjava.domains.User;
 import br.com.fiap.backendjava.domains.enums.Role;
 import br.com.fiap.backendjava.gateways.repositories.AbrigoRepository;
@@ -108,6 +109,14 @@ public class DbService {
         Distribuicao distribuicao4 = new Distribuicao(null, doacao4, 1, LocalDate.now().minusDays(2), solicitante6);
         Distribuicao distribuicao5 = new Distribuicao(null, doacao5, 2, LocalDate.now().minusDays(1), solicitante7);
         distribuicaoRepository.saveAll(Arrays.asList(distribuicao1, distribuicao2, distribuicao3, distribuicao4, distribuicao5));
+
+        RegistroEvento registroEvento1 = new RegistroEvento(null, "Entrega de roupas e alimentos para o abrigo Esperança", LocalDate.now().minusDays(10).atStartOfDay(), empresaParceira, "03043-020" , abrigo1);
+        RegistroEvento registroEvento2 = new RegistroEvento(null, "Reunião de planejamento com voluntários", LocalDate.now().minusDays(8).atStartOfDay(), voluntario2, "89249-000" , abrigo2);
+        RegistroEvento registroEvento3 = new RegistroEvento(null, "Campanha de arrecadação de brinquedos", LocalDate.now().minusDays(6).atStartOfDay(), voluntario3, "18475-123" , abrigo3);
+        RegistroEvento registroEvento4 = new RegistroEvento(null, "Distribuição de kits de higiene para famílias carentes", LocalDate.now().minusDays(4).atStartOfDay(), voluntario, "12345-678" , abrigo1);
+        RegistroEvento registroEvento5 = new RegistroEvento(null, "Palestra sobre saúde mental", LocalDate.now().minusDays(2).atStartOfDay(), profissionalSaude, "45678-910" , abrigo2);
+        registroEventoRepository.saveAll(Arrays.asList(registroEvento1, registroEvento2, registroEvento3, registroEvento4, registroEvento5));
+
         log.info("Banco de dados criado com sucesso!");
     }
 }
