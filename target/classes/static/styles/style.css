@@ -163,7 +163,7 @@ body {
 }
 
 .footer {
-    background-color: var(--cor-gradiente-100); /* Fundo cinza claro */
+    background-color: transparent;
     color: var(--cor-branco); /* Cor do texto */
     text-align: center; /* Centralizar texto */
     padding: 30px 0; /* Espaçamento interno */
@@ -182,13 +182,6 @@ body {
 /* CONTAINER PRINCIPAL */
 .home-container {
     text-align: center;
-    background: linear-gradient(
-            to bottom,
-            var(--cor-gradiente-0) 0%,
-            var(--cor-gradiente-30) 30%,
-            var(--cor-gradiente-66) 66%,
-            var(--cor-gradiente-100) 100%
-    );
     color: white;
     height: 80vh;
     display: flex;

@@ -27,7 +27,6 @@ public class UserMapper {
 
     public void updateEntityFromDTO(UserUpdateDTO dto, User user) {
         user.setNome(dto.nome());
-        user.setUsername(dto.username());
         user.setTelefone(dto.telefone());
         user.setDataNascimento(dto.dataNascimento());
         user.setDocumento(dto.documento());

@@ -15,6 +15,7 @@
 
   <div class="header-container">
     <h1 class="feedback-title" th:text="#{admin.dados.title}">Seus Dados</h1>
+    <a href="/admin/editar" class="btn-novo" th:text="#{admin.alterar}">+ Alterar Dados</a>
   </div>
 
   <div class="admin-info">
@@ -24,6 +25,14 @@
     <p><strong th:text="#{admin.endereco}">Endereço:</strong> <span th:text="${enderecoUsuario}"></span></p>
     <p><strong th:text="#{admin.dataNascimento}">Data de Nascimento:</strong> <span th:text="${dataUsuario}"></span></p>
     <p><strong th:text="#{admin.status}">Status:</strong> <span th:text="${statusUsuario}"></span></p>
+  </div>
+</div>
+
+<!-- Modal: Dados atualizados com sucesso -->
+<div id="updatedClinicaModal" class="modal" th:if="${param.updated}">
+  <div class="modal-content">
+    <span class="close" onclick="closeModalByElement(this)">&times;</span>
+    <p th:text="#{admin.modal.updated}">Dados atualizados com sucesso.</p>
   </div>
 </div>
 

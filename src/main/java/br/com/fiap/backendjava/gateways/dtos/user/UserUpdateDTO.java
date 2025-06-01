@@ -6,7 +6,6 @@ import java.time.LocalDate;
 
 public record UserUpdateDTO(
         String nome,
-        String username,
         String telefone,
         Endereco idEndereco,
         LocalDate dataNascimento,
