@@ -5,7 +5,6 @@ import br.com.fiap.backendjava.domains.Doacao;
 import java.util.List;
 
 public interface DoacaoService {
-    Doacao criar(Doacao doacao);
 
     Doacao buscarPorId(Integer id);
 

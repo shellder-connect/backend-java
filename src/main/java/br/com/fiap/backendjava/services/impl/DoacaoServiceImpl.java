@@ -14,11 +14,6 @@ import java.util.List;
 public class DoacaoServiceImpl implements DoacaoService {
 
     @Override
-    public Doacao criar(Doacao doacao) {
-        return null;
-    }
-
-    @Override
     public Doacao buscarPorId(Integer id) {
         return null;
     }

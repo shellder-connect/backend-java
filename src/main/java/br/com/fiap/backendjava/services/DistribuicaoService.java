@@ -6,7 +6,6 @@ import br.com.fiap.backendjava.domains.Doacao;
 import java.util.List;
 
 public interface DistribuicaoService {
-    Distribuicao criar(Doacao distribuicao);
 
     Distribuicao buscarPorId(Integer id);
 

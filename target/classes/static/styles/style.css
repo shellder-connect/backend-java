@@ -554,6 +554,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.abrigo-container p {
+    font-size: 1em;
+    color: var(--cor-gradiente-100);
+}
+
 /* Informações do Cliente */
 .feedback-info p {
     background: #e3e6f0;
