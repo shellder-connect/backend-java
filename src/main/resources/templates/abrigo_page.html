@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{abrigo.list.title}">Abrigos</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="abrigo-container">
+    <div class="header-container">
+        <h1 class="abrigo-title" th:text="#{abrigo.list.heading}">Lista de Abrigos</h1>
+        <div class="button-group-centered">
+            <form th:action="@{/abrigos/resumo-abrigos}" method="get" style="display: inline;">
+                <button type="submit" class="btn-novo" th:text="#{abrigo.list.gerarResumo}">Gerar Resumo</button>
+            </form>
+            <a href="/abrigos/criar" class="btn-novo" sec:authorize="hasRole('ADMIN')" th:text="#{abrigo.list.new}">+ Novo Abrigo</a>
+        </div>
+    </div>
+    <table class="feedback-table">
+        <thead>
+        <tr>
+            <th th:text="#{abrigo.list.id}">ID</th>
+            <th th:text="#{abrigo.capacidadeTotal}">Capacidade Total</th>
+            <th th:text="#{abrigo.ocupacaoAtual}">Ocupação Atual</th>
+            <th th:text="#{abrigo.descricao}">Descrição</th>
+            <th th:text="#{abrigo.acoes}">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="abrigo : ${abrigos}">
+            <tr>
+                <td th:text="${abrigo.id}"></td>
+                <td th:text="${abrigo.capacidadeTotal}"></td>
+                <td th:text="${abrigo.ocupacaoAtual}"></td>
+                <td th:text="${abrigo.descricao}"></td>
+                <td class="actions" sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{|/abrigos/editar/${abrigo.id}|}" class="btn-edit" th:text="#{abrigo.editar}">Editar</a>
+                    <a th:href="@{|/abrigos/deletar/${abrigo.id}|}" class="btn-delete" th:text="#{abrigo.deletar}">Deletar</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal de Resumo IA -->
+<div id="resumoModal" class="modal" th:if="${resumoIA} and ${not #lists.isEmpty(abrigos)}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <h2 th:text="#{abrigo.resumo.heading}">Resumo dos Abrigos</h2>
+        <p th:text="${resumoIA}">Aqui aparecerá o resumo gerado pela IA.</p>
+    </div>
+</div>
+
+<!-- Modal: Abrigo Criado -->
+<div id="createdAbrigoModal" class="modal" th:if="${param.created}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{abrigo.modal.created}">Abrigo cadastrado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Abrigo Deletado -->
+<div id="deletedAbrigoModal" class="modal" th:if="${param.deleted}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{abrigo.modal.deleted}">Abrigo deletado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Nenhum Feedback Cadastrado -->
+<div id="emptyFeedbackModal" class="modal" th:if="${#lists.isEmpty(abrigos)}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{abrigo.modal.empty}">Nenhum abrigo cadastrado até o momento.</p>
+    </div>
+</div>
+
+<!-- Modal: Abrigo Editado -->
+<div id="editedAbrigoModal" class="modal" th:if="${param.edited}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{abrigo.modal.edited}">Abrigo editado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Erro ao deletar abrigo -->
+<div id="deletedErrorModal" class="modal" th:if="${param.deletedError}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{abrigo.modal.deletedError}">Não foi possível deletar. Este abrigo está associado a outros registros.</p>
+    </div>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

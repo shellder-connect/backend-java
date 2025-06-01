@@ -114,7 +114,7 @@ body {
 
 /* NAVBAR */
 .topnav {
-    background-color: #0065FF; /* Fundo azul */
+    background-color: transparent;
     overflow: hidden;
     padding: 15px 20px;
     display: flex;
@@ -445,7 +445,7 @@ body {
 .btn-novo {
     background-color: var(--cor-gradiente-0);
     color: white;
-    padding: 12px 20px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 35px;
     font-weight: 600;
@@ -469,7 +469,7 @@ body {
 }
 
 .feedback-table th {
-    background-color: #003ea6;
+    background-color: var(--cor-gradiente-30);
     color: white;
 }
 
@@ -488,36 +488,36 @@ body {
 }
 
 .btn-edit {
-    background-color: #007bff;
-    color: white;
+    background-color: #E2F7E8;
+    color: #737373;
     padding: 8px 12px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 700;
     transition: background-color 0.3s ease;
 }
 
 .btn-edit:hover {
-    background-color: #0056b3;
+    background-color: #c0eace;
 }
 
 .btn-delete {
-    background-color: #ff5468;
-    color: white;
+    background-color: #FFDCDC;
+    color: #737373;
     padding: 8px 12px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 700;
     transition: background-color 0.3s ease;
 }
 
 .btn-delete:hover {
-    background-color: #dc4c5d;
+    background-color: #f6c7c7;
 }
 
 /* TÍTULO */
-.feedback-title {
-    font-size: 2em;
+.abrigo-title {
+    font-size: 2.2em;
     font-weight: 700;
     color: var(--cor-gradiente-50);
     margin-bottom: 20px;
@@ -576,8 +576,8 @@ body {
 
 
 /* Container do Formulário */
-.feedback-container {
-    max-width: 800px;
+.abrigo-container {
+    max-width: 1200px;
     margin: 50px auto;
     padding: 50px;
     background: white;
