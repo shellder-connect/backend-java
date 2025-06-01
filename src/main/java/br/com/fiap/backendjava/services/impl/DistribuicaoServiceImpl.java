@@ -5,11 +5,13 @@ import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.services.DistribuicaoService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class DistribuicaoServiceImpl implements DistribuicaoService {
     @Override
     public Distribuicao criar(Doacao distribuicao) {

@@ -4,11 +4,13 @@ import br.com.fiap.backendjava.domains.Categoria;
 import br.com.fiap.backendjava.services.CategoriaService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class CategoriaServiceImpl implements CategoriaService {
 
     @Override

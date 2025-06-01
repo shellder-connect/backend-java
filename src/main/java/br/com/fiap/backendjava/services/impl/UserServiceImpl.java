@@ -2,10 +2,10 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.User;
+import br.com.fiap.backendjava.domains.enums.Role;
 import br.com.fiap.backendjava.gateways.dtos.user.UserCreateDTO;
 import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
 import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
-import br.com.fiap.backendjava.domains.enums.Role;
 import br.com.fiap.backendjava.gateways.repositories.UserRepository;
 import br.com.fiap.backendjava.mappers.UserMapper;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
@@ -13,20 +13,21 @@ import br.com.fiap.backendjava.security.UserDetailsServiceImpl;
 import br.com.fiap.backendjava.services.UserService;
 import br.com.fiap.backendjava.services.exception.AuthorizationException;
 import br.com.fiap.backendjava.services.exception.ObjectNotFoundException;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private UserRepository repository;
-    private UserMapper mapper;
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository repository;
+    private final UserMapper mapper;
+    private final PasswordEncoder passwordEncoder;
 
 
     @Override
@@ -51,6 +52,11 @@ public class UserServiceImpl implements UserService {
             throw new AuthorizationException("Você só pode visualizar seu próprio usuário");
         }
         return user;
+    }
+
+    @Override
+    public Optional<User> buscarPorUsername(String username) {
+        return repository.findUserByUsername(username);
     }
 
     @Override

@@ -4,11 +4,13 @@ import br.com.fiap.backendjava.domains.RegistroEvento;
 import br.com.fiap.backendjava.services.RegistroEventoService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class RegistroEventoServiceImpl implements RegistroEventoService {
     @Override
     public RegistroEvento criar(RegistroEvento registroEvento) {

@@ -14,14 +14,16 @@ import br.com.fiap.backendjava.services.exception.AuthorizationException;
 import br.com.fiap.backendjava.services.exception.ObjectNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class EnderecoServiceImpl implements EnderecoService {
 
-    private EnderecoRepository repository;
-    private UserRepository userRepository;
-    private EnderecoMapper mapper;
+    private final EnderecoRepository repository;
+    private final UserRepository userRepository;
+    private final EnderecoMapper mapper;
 
     @Override
     public Endereco criar(EnderecoCreateOrUpdateDTO enderecoCreateDTO) {

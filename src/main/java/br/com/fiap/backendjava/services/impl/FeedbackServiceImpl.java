@@ -4,11 +4,13 @@ import br.com.fiap.backendjava.domains.Feedback;
 import br.com.fiap.backendjava.services.FeedbackService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class FeedbackServiceImpl implements FeedbackService {
     @Override
     public Feedback criar(Feedback feedback) {

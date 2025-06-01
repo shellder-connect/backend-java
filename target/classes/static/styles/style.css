@@ -24,7 +24,6 @@ body {
             var(--cor-gradiente-66) 66%,
             var(--cor-gradiente-100) 100%
     );
-    /*color: #fd920b;*/
     margin: 0;
     padding: 0;
     height: 100%;
@@ -129,7 +128,7 @@ body {
 
 /* LOGO */
 .logo {
-    height: 30px; /* Ajuste o tamanho da logo */
+    height: 60px; /* Ajuste o tamanho da logo */
     margin-right: 20px;
 }
 
@@ -615,7 +614,7 @@ body {
     margin-bottom: 10px;
 }
 
-.clinica-info p {
+.admin-info p {
     font-size: 21px;
     margin-bottom: 20px;
 }
