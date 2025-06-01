@@ -10,4 +10,6 @@ public interface FeedbackService {
     Feedback buscarPorId(Integer id);
 
     List<Feedback> buscarTodos();
+
+    String gerarResumoFeedbacks(List<Feedback> feedbacks);
 }
