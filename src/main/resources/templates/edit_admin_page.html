@@ -9,7 +9,7 @@
 
 <div th:insert="~{componentes/navigation-admin::navigation}"></div>
 
-<div class="feedback-container">
+<div class="create-container">
     <h2 class="feedback-title" th:text="#{admin.edit.heading}">Editar Seus Dados</h2>
 
     <form method="post" th:action="@{/admin/editar}" th:object="${user}" class="feedback-form">

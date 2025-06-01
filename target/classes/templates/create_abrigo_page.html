@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{abrigo.create.title}">Cadastrar Abrigo</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="create-container">
+    <h2 class="feedback-title" th:text="#{abrigo.create.heading}">Cadastro de Abrigo</h2>
+
+    <form method="post" th:action="@{/abrigos/criar}" th:object="${novoAbrigo}" class="feedback-form">
+        <label for="capacidadeTotal" th:text="#{abrigo.capacidadeTotal}">Capacidade Total:</label>
+        <input type="number" id="capacidadeTotal" th:field="*{capacidadeTotal}" min="1" required>
+
+        <label for="ocupacaoAtual" th:text="#{abrigo.ocupacaoAtual}">Ocupação Atual:</label>
+        <input type="number" id="ocupacaoAtual" th:field="*{ocupacaoAtual}" min="0" required>
+
+        <label for="descricao" th:text="#{abrigo.descricao}">Descrição:</label>
+        <input type="text" id="descricao" th:field="*{descricao}" maxlength="100" required>
+
+        <div class="button-group">
+            <button type="submit" class="btn-submit" th:text="#{abrigo.cadastrar}">Cadastrar</button>
+            <a href="/abrigos" class="btn-back" th:text="#{abrigo.voltar}">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
