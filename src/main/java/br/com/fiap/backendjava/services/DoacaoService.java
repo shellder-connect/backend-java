@@ -10,7 +10,5 @@ public interface DoacaoService {
 
     List<Doacao> buscarTodos();
 
-    Doacao atualizar(Integer id, Doacao doacao);
-
-    Boolean deletar(Integer id);
+    String gerarResumoDoacoes(List<Doacao> doacoes);
 }

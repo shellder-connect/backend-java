@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{doacao.list.title}">Doações</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="abrigo-container">
+    <div class="header-container">
+        <h1 class="abrigo-title" th:text="#{doacao.list.heading}">Lista de Doações</h1>
+        <form th:action="@{/doacoes/resumo-doacoes}" method="get" style="display: inline;">
+            <button type="submit" class="btn-novo" th:text="#{abrigo.list.gerarResumo}">Gerar Resumo</button>
+        </form>
+    </div>
+        <p th:text="#{doacao.list.description}">
+            Tabela com as doações realizadas por meio do aplicativo, contendo informações de categoria, abrigo e
+            quantidade.
+        </p>
+    <div class="header-container">
+        <table class="feedback-table">
+            <thead>
+            <tr>
+                <th th:text="#{doacao.list.id}">ID</th>
+                <th th:text="#{doacao.list.abrigo}">Abrigo</th>
+                <th th:text="#{doacao.list.categoria}">Categoria</th>
+                <th th:text="#{doacao.list.descricao}">Descrição</th>
+                <th th:text="#{doacao.list.quantidade}">Quantidade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doacao : ${doacoes}">
+                <td th:text="${doacao.id}"></td>
+                <td th:text="${doacao.abrigo.descricao}"></td>
+                <td th:text="${doacao.categoria.descricao}"></td>
+                <td th:text="${doacao.descricao}"></td>
+                <td th:text="${doacao.quantidade}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal" th:if="${#lists.isEmpty(doacoes)}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{doacao.modal.empty}">Nenhuma doação cadastrada.</p>
+    </div>
+</div>
+
+<!-- Modal de Resumo IA -->
+<div id="resumoModal" class="modal" th:if="${resumoIA} and ${not #lists.isEmpty(doacoes)}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <h2 th:text="#{doacao.resumo.heading}">Resumo das Doações</h2>
+        <p th:text="${resumoIA}">Aqui aparecerá o resumo gerado pela IA.</p>
+    </div>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

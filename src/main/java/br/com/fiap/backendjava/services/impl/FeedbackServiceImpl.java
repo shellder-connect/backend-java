@@ -2,8 +2,6 @@ package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Feedback;
 import br.com.fiap.backendjava.services.FeedbackService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +10,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class FeedbackServiceImpl implements FeedbackService {
-    @Override
-    public Feedback criar(Feedback feedback) {
-        return null;
-    }
 
     @Override
     public Feedback buscarPorId(Integer id) {
@@ -27,13 +21,4 @@ public class FeedbackServiceImpl implements FeedbackService {
         return List.of();
     }
 
-    @Override
-    public Feedback atualizar(Integer id, Feedback feedback) {
-        return null;
-    }
-
-    @Override
-    public Boolean deletar(Integer id) {
-        return null;
-    }
 }
