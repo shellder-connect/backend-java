@@ -8,13 +8,13 @@
 <body>
 <div th:insert="~{componentes/navigation-admin::navigation}"></div>
 
-<div class="feedback-container-feedback">
+<div class="container-geral">
   <h1 class="dashboard-title">
     <span th:text="#{admin.painel.welcome}">Bem-Vindo,</span> <span th:text="${nomeUsuario}">[Nome]</span>
   </h1>
 
   <div class="header-container">
-    <h1 class="feedback-title" th:text="#{admin.dados.title}">Seus Dados</h1>
+    <h1 class="dashboard-subtitle" th:text="#{admin.dados.title}">Seus Dados</h1>
     <a href="/admin/editar" class="btn-novo" th:text="#{admin.alterar}">+ Alterar Dados</a>
   </div>
 

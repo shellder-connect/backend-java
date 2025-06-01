@@ -7,17 +7,20 @@ import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
 import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 import org.springframework.stereotype.Component;
 
+import static br.com.fiap.backendjava.utils.FormatUtil.formatarNomeCompleto;
+import static br.com.fiap.backendjava.utils.FormatUtil.limparTelefone;
+
 @Component
 public class UserMapper {
 
     public User toEntityFromCreateDTO(UserCreateDTO dto, Endereco endereco, String senhaCriptografada) {
         return new User(
                 null,
-                dto.nome(),
+                formatarNomeCompleto(dto.nome()),
                 dto.username(),
                 senhaCriptografada,
                 dto.role(),
-                dto.telefone(),
+                limparTelefone(dto.telefone()),
                 endereco,
                 dto.dataNascimento(),
                 dto.documento(),
@@ -26,8 +29,8 @@ public class UserMapper {
     }
 
     public void updateEntityFromDTO(UserUpdateDTO dto, User user) {
-        user.setNome(dto.nome());
-        user.setTelefone(dto.telefone());
+        user.setNome(formatarNomeCompleto(dto.nome()));
+        user.setTelefone(limparTelefone(dto.telefone()));
         user.setDataNascimento(dto.dataNascimento());
         user.setDocumento(dto.documento());
         user.setStatus(dto.status());

@@ -41,6 +41,7 @@ body {
     font-size: 2.2em;
     font-weight: 700;
     margin-bottom: 20px;
+    color: var(--cor-gradiente-66);
 }
 
 /* BOTÃO NOVO CLIENTE */
@@ -233,7 +234,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid var(--cor-cinza-claro);
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 1.3em;
 
 }
@@ -247,7 +248,7 @@ body {
     padding: 12px;
     font-size: 1.2em;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -278,6 +279,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .edit-form label {
@@ -404,8 +411,8 @@ body {
     background-color: #b02a37;
 }
 
-/* CONTAINER DA LISTAGEM DE FEEDBACKS */
-.feedback-container-feedback {
+/* CONTAINER */
+.container-geral {
     width: 70%;
     margin: 50px auto;
     padding: 30px;
@@ -422,25 +429,31 @@ body {
     margin-bottom: 20px;
 }
 
-.feedback-title {
-    font-size: 2em;
+.dashboard-title {
+    font-size: 2.4em;
     font-weight: 700;
-    color: #003ea6;
+    color: var(--cor-gradiente-50);
 }
 
-/* BOTÃO NOVO FEEDBACK */
+.dashboard-subtitle {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: var(--cor-gradiente-50);
+}
+
+/* BOTÃO NOVO DADO */
 .btn-novo {
-    background-color: #003ea6;
+    background-color: var(--cor-gradiente-0);
     color: white;
     padding: 12px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 35px;
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
 .btn-novo:hover {
-    background-color: #002766;
+    background-color: var(--cor-gradiente-30);
 }
 
 /* TABELA DE FEEDBACK */
@@ -506,7 +519,7 @@ body {
 .feedback-title {
     font-size: 2em;
     font-weight: 700;
-    color: #003ea6;
+    color: var(--cor-gradiente-50);
     margin-bottom: 20px;
 }
 
@@ -520,7 +533,7 @@ body {
 /* LABELS */
 .feedback-form label {
     font-weight: 600;
-    color: #003ea6;
+    color: var(--cor-gradiente-66);
     text-align: left;
     display: block;
     margin-bottom: 5px;
@@ -530,10 +543,10 @@ body {
 .feedback-form input,
 .feedback-form select,
 .feedback-form textarea {
-    width: 80%;
+    width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
 }
 
@@ -543,59 +556,33 @@ body {
     resize: vertical;
 }
 
-/* BOTÕES */
-.button-group {
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+}
+
+.form-grid div {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: column;
 }
 
-.btn-submit {
-    background-color: #003ea6;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
+.button-group-centered {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
 }
 
-.btn-submit:hover {
-    background-color: #002766;
-}
-
-.btn-back {
-    background-color: #ccc;
-    color: black;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.btn-back:hover {
-    background-color: #999;
-}
 
 /* Container do Formulário */
 .feedback-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 50px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Título */
-.feedback-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
 }
 
 /* Informações do Cliente */
@@ -610,6 +597,12 @@ body {
 .admin-info p {
     font-size: 21px;
     margin-bottom: 20px;
+}
+
+.admin-info strong {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: var(--cor-gradiente-30);
 }
 
 .logout-form {
@@ -639,7 +632,7 @@ body {
 
 /* Campos do Formulário */
 .feedback-form label {
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     margin-top: 15px;
 }
@@ -647,10 +640,10 @@ body {
 .feedback-form input,
 .feedback-form textarea,
 .feedback-form select {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
     margin-top: 5px;
 }
@@ -667,33 +660,43 @@ body {
     margin-top: 20px;
 }
 
+.btn-submit,
+.btn-back {
+    width: 180px;
+}
+
+
 .btn-submit {
-    background-color: #0065ff;
+    background-color: var(--cor-gradiente-30);
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    text-align: center;
 }
 
 .btn-submit:hover {
-    background-color: #004ab3;
+    background-color: var(--cor-gradiente-50);
 }
 
 .btn-back {
     text-decoration: none;
-    background-color: #e0e0e0;
-    color: #333;
+    color: var(--cor-gradiente-100);
+    background-color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
+    border: 1px solid var(--cor-gradiente-66);
     font-size: 16px;
-    transition: background 0.3s;
+    cursor: pointer;
+    text-align: center;
+    transition: border 0.3s;
 }
 
 .btn-back:hover {
-    background-color: #c0c0c0;
+    border: 2px solid var(--cor-gradiente-66);
 }
 
 .modal {
@@ -726,3 +729,4 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
