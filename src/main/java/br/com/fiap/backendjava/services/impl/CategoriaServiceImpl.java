@@ -1,9 +1,8 @@
 package br.com.fiap.backendjava.services.impl;
 
 import br.com.fiap.backendjava.domains.Categoria;
+import br.com.fiap.backendjava.gateways.repositories.CategoriaRepository;
 import br.com.fiap.backendjava.services.CategoriaService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,28 +12,35 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoriaServiceImpl implements CategoriaService {
 
+    private final CategoriaRepository repository;
+
     @Override
     public Categoria criar(Categoria categoria) {
-        return null;
+        return repository.save(categoria);
     }
 
     @Override
     public Categoria buscarPorId(Integer id) {
-        return null;
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Categoria não encontrada com id: " + id));
     }
 
     @Override
     public List<Categoria> buscarTodos() {
-        return List.of();
+        return repository.findAll();
     }
 
     @Override
-    public Categoria atualizar(Integer id, Categoria categoria) {
-        return null;
+    public Categoria atualizar(Integer id, Categoria categoriaAtualizada) {
+        Categoria existente = buscarPorId(id);
+        existente.setDescricao(categoriaAtualizada.getDescricao());
+        return repository.save(existente);
     }
 
     @Override
     public Boolean deletar(Integer id) {
-        return null;
+        Categoria categoria = buscarPorId(id);
+        repository.delete(categoria);
+        return true;
     }
 }
