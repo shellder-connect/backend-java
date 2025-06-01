@@ -13,11 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RegistroEventoServiceImpl implements RegistroEventoService {
     @Override
-    public RegistroEvento criar(RegistroEvento registroEvento) {
-        return null;
-    }
-
-    @Override
     public RegistroEvento buscarPorId(Integer id) {
         return null;
     }
@@ -25,15 +20,5 @@ public class RegistroEventoServiceImpl implements RegistroEventoService {
     @Override
     public List<RegistroEvento> buscarTodos() {
         return List.of();
-    }
-
-    @Override
-    public RegistroEvento atualizar(Integer id, RegistroEvento registroEvento) {
-        return null;
-    }
-
-    @Override
-    public Boolean deletar(Integer id) {
-        return null;
     }
 }

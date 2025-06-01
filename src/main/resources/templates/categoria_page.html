@@ -16,7 +16,9 @@
             <a href="/categorias/criar" class="btn-novo" sec:authorize="hasRole('ADMIN')" th:text="#{categoria.list.new}">+ Nova Categoria</a>
         </div>
     </div>
-
+    <p th:text="#{categoria.list.description}">
+        Define categorias de itens que podem ser doados, como alimentos, roupas, medicamentos, etc.
+    </p>
     <table class="feedback-table">
         <thead>
         <tr>

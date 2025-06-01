@@ -19,6 +19,9 @@
             <a href="/abrigos/criar" class="btn-novo" sec:authorize="hasRole('ADMIN')" th:text="#{abrigo.list.new}">+ Novo Abrigo</a>
         </div>
     </div>
+    <p th:text="#{abrigo.list.description}">
+        Representa abrigos cadastrados no sistema que podem receber ou distribuir doações.
+    </p>
     <table class="feedback-table">
         <thead>
         <tr>
