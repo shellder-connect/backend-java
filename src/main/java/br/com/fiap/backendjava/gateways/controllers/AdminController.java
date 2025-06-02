@@ -66,7 +66,7 @@ public class AdminController {
     @PostMapping("/editar")
     public String atualizarAdmin(@AuthenticationPrincipal UserDetailsImpl userDetails, User userForm) {
         String username = userDetails.getUsername();
-        User userExistente = userService.buscarPorUsername(username)
+        User userLogado = userService.buscarPorUsername(username)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado para o e-mail: " + username));
 
         UserUpdateDTO userUpdateDTO = new UserUpdateDTO(
@@ -78,7 +78,8 @@ public class AdminController {
                 userForm.getStatus()
         );
 
-        userService.atualizar(userExistente.getId(), userUpdateDTO);
+        userService.atualizar(userLogado.getId(), userUpdateDTO);
         return "redirect:/admin/home?updated=true";
     }
+
 }

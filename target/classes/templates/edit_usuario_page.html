@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{admin.edit.title}">Editar Dados do Admin</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="create-container">
+    <h2 class="feedback-title" th:text="#{admin.edit.heading}">Editar Seus Dados</h2>
+
+    <form method="post" th:action="@{/usuarios/editar}" th:object="${usuario}" class="feedback-form">
+        <input type="hidden" name="id" th:value="${usuarioId}" />
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="nome" th:text="#{usuario.nome}">Nome:</label>
+                <input type="text" id="nome" th:field="*{nome}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone" th:text="#{usuario.telefone}">Telefone:</label>
+                <input type="text" id="telefone" th:field="*{telefone}" required>
+            </div>
+
+            <!-- Endereço -->
+            <div class="form-group">
+                <label for="rua" th:text="#{usuario.endereco.rua}">Rua:</label>
+                <input type="text" id="rua" th:field="*{idEndereco.rua}">
+            </div>
+
+            <div class="form-group">
+                <label for="numero" th:text="#{usuario.endereco.numero}">Número:</label>
+                <input type="text" id="numero" th:field="*{idEndereco.numero}">
+            </div>
+
+            <div class="form-group">
+                <label for="bairro" th:text="#{usuario.endereco.bairro}">Bairro:</label>
+                <input type="text" id="bairro" th:field="*{idEndereco.bairro}">
+            </div>
+
+            <div class="form-group">
+                <label for="cidade" th:text="#{usuario.endereco.cidade}">Cidade:</label>
+                <input type="text" id="cidade" th:field="*{idEndereco.cidade}">
+            </div>
+
+            <div class="form-group">
+                <label for="estado" th:text="#{usuario.endereco.estado}">Estado:</label>
+                <input type="text" id="estado" th:field="*{idEndereco.estado}">
+            </div>
+
+            <div class="form-group">
+                <label for="cep" th:text="#{usuario.endereco.cep}">CEP:</label>
+                <input type="text" id="cep" th:field="*{idEndereco.cep}">
+            </div>
+
+            <div class="form-group">
+                <label for="complemento" th:text="#{usuario.endereco.complemento}">Complemento:</label>
+                <input type="text" id="complemento" th:field="*{idEndereco.complemento}">
+            </div>
+
+            <!-- Documento -->
+            <div class="form-group">
+                <label for="documento" th:text="#{usuario.documento}">Documento:</label>
+                <input type="text" id="documento" th:field="*{documento}">
+            </div>
+
+            <!-- Data de Nascimento -->
+            <div class="form-group">
+                <label for="dataNascimento" th:text="#{usuario.dataNascimento}">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento"
+                       th:value="${usuario.dataNascimento != null ? #temporals.format(usuario.dataNascimento, 'yyyy-MM-dd') : ''}"
+                       name="dataNascimento">
+            </div>
+
+            <!-- Status -->
+            <div class="form-group">
+                <label for="status" th:text="#{usuario.status}">Status:</label>
+                <select id="status" th:field="*{status}">
+                    <option th:value="true" th:text="#{usuario.status.ativo}">Ativo</option>
+                    <option th:value="false" th:text="#{usuario.status.inativo}">Inativo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="button-group-centered">
+            <button type="submit" class="btn-submit" th:text="#{admin.salvar}">Salvar</button>
+            <a href="/usuarios/home" class="btn-back" th:text="#{admin.voltar}">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

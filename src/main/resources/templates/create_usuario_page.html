@@ -10,7 +10,7 @@
 <div th:insert="~{componentes/navigation-admin::navigation}"></div>
 
 <div class="create-container">
-    <h1  class="feedback-title"  th:text="#{usuario.create.heading}">Cadastro de Novo Usuário</h1>
+    <h1  class="create-title" th:text="#{usuario.create.heading}">Cadastro de Novo Usuário</h1>
 
     <form th:action="@{/usuarios/criar}" th:object="${novoUsuario}" method="post" class="feedback-form">
         <div class="form-grid">
@@ -33,7 +33,10 @@
             <label for="role" th:text="#{usuario.role}">Papel</label>
             <select th:field="*{role}" id="role">
                 <option th:value="ADMIN" th:text="#{usuario.role.admin}">Admin</option>
-                <option th:value="USUARIO" th:text="#{usuario.role.usuario}">Usuário</option>
+                <option th:value="VOLUNTARIO" th:text="#{usuario.role.voluntario}">Voluntário</option>
+                <option th:value="EMPRESAPARCEIRA" th:text="#{usuario.role.empresaparceira}">Usuário</option>
+                <option th:value="SOLICITANTE" th:text="#{usuario.role.solicitante}">Dentista</option>
+                <option th:value="PROFISSIONALSAUDE" th:text="#{usuario.role.profissionalsaude}">Gerente</option>
             </select>
         </div>
 
