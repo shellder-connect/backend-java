@@ -10,6 +10,7 @@ import br.com.fiap.backendjava.gateways.repositories.UserRepository;
 import br.com.fiap.backendjava.mappers.UserMapper;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
 import br.com.fiap.backendjava.security.UserDetailsServiceImpl;
+import br.com.fiap.backendjava.services.EmailService;
 import br.com.fiap.backendjava.services.UserService;
 import br.com.fiap.backendjava.services.exception.AuthorizationException;
 import br.com.fiap.backendjava.services.exception.ObjectNotFoundException;
@@ -28,7 +29,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final UserMapper mapper;
     private final PasswordEncoder passwordEncoder;
-    private final EmailServiceImpl emailService;
+    private final EmailService emailService;
 
     @Override
     public User criar(UserCreateDTO userCreateDTO) {
