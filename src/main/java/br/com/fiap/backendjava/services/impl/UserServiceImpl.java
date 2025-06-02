@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final UserMapper mapper;
     private final PasswordEncoder passwordEncoder;
+    private final EmailServiceImpl emailService;
 
     @Override
     public User criar(UserCreateDTO userCreateDTO) {
@@ -40,6 +41,9 @@ public class UserServiceImpl implements UserService {
         String senhaCriptografada = passwordEncoder.encode(userCreateDTO.senha());
 
         User user = mapper.toEntityFromCreateDTO(userCreateDTO, endereco, senhaCriptografada);
+
+        String mensagemEmail = String.format("Usuario %s criado com sucesso!", user.getNome());
+        emailService.enviarEmail(user.getUsername(), "Cadastro Realizado", mensagemEmail);
         return repository.save(user);
     }
 
