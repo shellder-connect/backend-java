@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{usuario.list.title}">Usuários</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="abrigo-container">
+    <div class="header-container">
+        <h1 class="abrigo-title" th:text="#{usuario.list.heading}">Lista de Usuários</h1>
+        <div class="button-group-centered">
+            <a href="/usuarios/criar" class="btn-novo" sec:authorize="hasRole('ADMIN')" th:text="#{usuario.list.new}">+ Novo Usuário</a>
+        </div>
+    </div>
+    <p th:text="#{usuario.list.description}">Representa os usuários cadastrados no sistema.</p>
+    <table class="feedback-table">
+        <thead>
+        <tr>
+            <th th:text="#{usuario.nome}">Nome</th>
+            <th th:text="#{usuario.username}">Username</th>
+            <th th:text="#{usuario.telefone}">Telefone</th>
+            <th th:text="#{usuario.role}">Papel</th>
+            <th th:text="#{usuario.status}">Status</th>
+            <th th:text="#{usuario.acoes}">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="usuario : ${usuariosPage}">
+            <tr>
+                <td th:text="${usuario.nome}"></td>
+                <td th:text="${usuario.username}"></td>
+                <td th:text="${usuario.telefone}"></td>
+                <td th:text="${usuario.role()}"></td>
+                <td th:text="${usuario.status} ? 'Ativo' : 'Inativo'"></td>
+                <td class="actions" sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{|/usuarios/editar/${usuario.id}|}" class="btn-edit" th:text="#{usuario.editar}">Editar</a>
+                    <a th:href="@{|/usuarios/deletar/${usuario.id}|}" class="btn-delete" th:text="#{usuario.deletar}">Deletar</a>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <a th:href="@{|/usuarios?page=${currentPage - 1}|}" th:if="${currentPage > 0}" class="page-link">&laquo;</a>
+        <span th:text="${currentPage + 1}"></span>
+        <a th:href="@{|/usuarios?page=${currentPage + 1}|}" th:if="${currentPage + 1 < totalPages}" class="page-link">&raquo;</a>
+    </div>
+</div>
+
+<!-- Modal: Usuário Criado -->
+<div id="createdUsuarioModal" class="modal" th:if="${param.created}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{usuario.modal.created}">Usuário cadastrado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Usuário Editado -->
+<div id="editedUsuarioModal" class="modal" th:if="${param.updated}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{usuario.modal.edited}">Usuário editado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Usuário Deletado -->
+<div id="deletedUsuarioModal" class="modal" th:if="${param.deleted}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{usuario.modal.deleted}">Usuário deletado com sucesso.</p>
+    </div>
+</div>
+
+<!-- Modal: Erro ao deletar Usuário -->
+<div id="deletedErrorModal" class="modal" th:if="${param.deletedError}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{usuario.modal.deletedError}">Não foi possível deletar. Este usuário está associado a outros registros.</p>
+    </div>
+</div>
+
+<!-- Modal: Nenhum Usuário Cadastrado -->
+<div id="emptyUsuarioModal" class="modal" th:if="${usuarioVazio}">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalByElement(this)">&times;</span>
+        <p th:text="#{usuario.modal.empty}">Nenhum usuário cadastrado até o momento.</p>
+    </div>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{usuario.create.title}">Criar Usuário</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<div th:insert="~{componentes/navigation-admin::navigation}"></div>
+
+<div class="create-container">
+    <h1  class="feedback-title"  th:text="#{usuario.create.heading}">Cadastro de Novo Usuário</h1>
+
+    <form th:action="@{/usuarios/criar}" th:object="${novoUsuario}" method="post" class="feedback-form">
+        <div class="form-grid">
+        <div class="form-group">
+            <label for="nome" th:text="#{usuario.nome}">Nome</label>
+            <input type="text" id="nome" th:field="*{nome}" placeholder="Digite o nome"/>
+        </div>
+
+        <div class="form-group">
+            <label for="username" th:text="#{usuario.username}">E-mail</label>
+            <input type="email" id="username" th:field="*{username}" placeholder="Digite o e-mail"/>
+        </div>
+
+        <div class="form-group">
+            <label for="senha" th:text="#{usuario.senha}">Senha</label>
+            <input type="password" id="senha" th:field="*{senha}" placeholder="Digite a senha"/>
+        </div>
+
+        <div class="form-group">
+            <label for="role" th:text="#{usuario.role}">Papel</label>
+            <select th:field="*{role}" id="role">
+                <option th:value="ADMIN" th:text="#{usuario.role.admin}">Admin</option>
+                <option th:value="USUARIO" th:text="#{usuario.role.usuario}">Usuário</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="telefone" th:text="#{usuario.telefone}">Telefone</label>
+            <input type="text" id="telefone" th:field="*{telefone}" placeholder="(11) 99999-9999"/>
+        </div>
+
+            <div class="form-group">
+                <label th:for="dataNascimento" th:text="#{usuario.dataNascimento}">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" th:field="*{dataNascimento}"/>
+            </div>
+
+            <div class="form-group">
+                <label th:for="documento" th:text="#{usuario.documento}">Documento</label>
+                <input type="text" id="documento" th:field="*{documento}"/>
+            </div>
+
+            <div class="form-group">
+                <label th:for="status" th:text="#{usuario.status}">Status</label>
+                <select id="status" th:field="*{status}">
+                    <option th:value="true" th:text="#{usuario.status.ativo}">Ativo</option>
+                    <option th:value="false" th:text="#{usuario.status.inativo}">Inativo</option>
+                </select>
+            </div>
+            </div>
+        <!-- Endereço -->
+        <fieldset class="form-grid">
+            <legend th:text="#{usuario.endereco}">Endereço</legend>
+
+            <div class="form-group">
+                <label>Rua</label>
+                <input type="text" th:field="*{idEndereco.rua}"/>
+            </div>
+            <div class="form-group">
+                <label>Número</label>
+                <input type="text" th:field="*{idEndereco.numero}"/>
+            </div>
+            <div class="form-group">
+                <label>Bairro</label>
+                <input type="text" th:field="*{idEndereco.bairro}"/>
+            </div>
+            <div class="form-group">
+                <label>Cidade</label>
+                <input type="text" th:field="*{idEndereco.cidade}"/>
+            </div>
+            <div class="form-group">
+                <label>Estado</label>
+                <input type="text" th:field="*{idEndereco.estado}"/>
+            </div>
+            <div class="form-group">
+                <label>CEP</label>
+                <input type="text" th:field="*{idEndereco.cep}"/>
+            </div>
+            <div class="form-group">
+                <label>Complemento</label>
+                <input type="text" th:field="*{idEndereco.complemento}"/>
+            </div>
+        </fieldset>
+        <div class="button-group-centered">
+            <button type="submit" class="btn-submit" th:text="#{usuario.salvar}">Criar</button>
+            <a href="/usuarios" class="btn-back" th:text="#{usuario.voltar}">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<div th:insert="~{componentes/footer::footer}"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -34,6 +34,23 @@ public class UserMapper {
         user.setDataNascimento(dto.dataNascimento());
         user.setDocumento(dto.documento());
         user.setStatus(dto.status());
+
+        Endereco enderecoRecebido = dto.idEndereco();
+        if (enderecoRecebido != null) {
+            Endereco enderecoExistente = user.getIdEndereco();
+
+            if (enderecoExistente == null) {
+                enderecoExistente = new Endereco();
+                user.setIdEndereco(enderecoExistente);
+            }
+            enderecoExistente.setRua(enderecoRecebido.getRua());
+            enderecoExistente.setNumero(enderecoRecebido.getNumero());
+            enderecoExistente.setBairro(enderecoRecebido.getBairro());
+            enderecoExistente.setCidade(enderecoRecebido.getCidade());
+            enderecoExistente.setEstado(enderecoRecebido.getEstado());
+            enderecoExistente.setCep(enderecoRecebido.getCep());
+            enderecoExistente.setComplemento(enderecoRecebido.getComplemento());
+        }
     }
 
     public UserDetailDTO toDetailDTO(User user) {
@@ -44,6 +61,7 @@ public class UserMapper {
                 user.getTelefone(),
                 user.getIdEndereco(),
                 user.getDataNascimento(),
+                user.getRole(),
                 user.getDocumento(),
                 user.getStatus()
         );

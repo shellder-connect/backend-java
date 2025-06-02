@@ -27,8 +27,6 @@ public record UserCreateDTO(
         @Pattern(regexp = "\\(?\\d{2}\\)?\\s?9?\\d{4}-\\d{4}", message = "Telefone inválido.")
         String telefone,
 
-        Endereco idEndereco, // pode ser null, então sem validação
-
         @Past(message = "A data de nascimento deve ser no passado.")
         LocalDate dataNascimento,
 
@@ -36,5 +34,7 @@ public record UserCreateDTO(
         String documento,
 
         @NotNull(message = "O status é obrigatório.")
-        Boolean status
+        Boolean status,
+
+        Endereco idEndereco // pode ser null, então sem validação
 ) {}

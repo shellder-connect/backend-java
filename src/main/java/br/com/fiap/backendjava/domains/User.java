@@ -1,6 +1,7 @@
 package br.com.fiap.backendjava.domains;
 
 import br.com.fiap.backendjava.domains.enums.Role;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -46,8 +48,8 @@ public class User {
 
     private String telefone;
 
-    @ManyToOne
     @JoinColumn(name = "id_endereco")
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco idEndereco;
 
     @Column(name = "data_nascimento")

@@ -7,10 +7,5 @@ Gere um resumo com os seguintes pontos:
 - **Média geral das notas**.
 - Destaque nomes de usuários mais elogiados ou mais criticados.
 
-Formato de resposta esperado:
-Resumo dos feedbacks:
-1. Sentimento geral: ... \n
-2. Pontos positivos: ... \n
-3. Críticas/sugestões: ... \n
-4. Média geral: ... \n
-5. Destaques por nome: ... \n
+Seja conciso, evite repetir palavras e mantenha um tom acessível e institucional.
+

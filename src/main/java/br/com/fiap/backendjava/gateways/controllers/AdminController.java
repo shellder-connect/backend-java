@@ -1,5 +1,6 @@
 package br.com.fiap.backendjava.gateways.controllers;
 
+import br.com.fiap.backendjava.domains.Endereco;
 import br.com.fiap.backendjava.domains.User;
 import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
@@ -53,6 +54,11 @@ public class AdminController {
         String username = userDetails.getUsername();
         User user = userService.buscarPorUsername(username)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado para o e-mail: " + username));
+
+        if (user.getIdEndereco() == null) {
+            user.setIdEndereco(new Endereco());
+        }
+
         model.addAttribute("user", user);
         return "edit_admin_page";
     }
@@ -71,6 +77,7 @@ public class AdminController {
                 userForm.getDocumento(),
                 userForm.getStatus()
         );
+
         userService.atualizar(userExistente.getId(), userUpdateDTO);
         return "redirect:/admin/home?updated=true";
     }
