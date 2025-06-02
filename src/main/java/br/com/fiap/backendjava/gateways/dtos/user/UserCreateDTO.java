@@ -36,5 +36,5 @@ public record UserCreateDTO(
         @NotNull(message = "O status é obrigatório.")
         Boolean status,
 
-        Endereco idEndereco // pode ser null, então sem validação
+        Endereco idEndereco
 ) {}

@@ -14,7 +14,7 @@ public record UserUpdateDTO(
         @Pattern(regexp = "\\(?\\d{2}\\)?\\s?9?\\d{4}-\\d{4}", message = "Telefone inválido.")
         String telefone,
 
-        Endereco idEndereco, // pode continuar como null
+        Endereco idEndereco, // pode continuar como null se a pessoa n quiser botar endereço
 
         @Past(message = "A data de nascimento deve ser no passado.")
         LocalDate dataNascimento,
