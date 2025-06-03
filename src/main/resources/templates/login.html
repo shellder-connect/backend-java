@@ -24,6 +24,13 @@
             <input id="password" name="password" type="password" th:placeholder="#{login.password.placeholder}" required>
         </div>
         <button type="submit" th:text="#{login.button}">Login</button>
+
+        <div class="oauth-login">
+            <a th:href="@{/oauth2/authorization/github}" class="github-btn">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="20" height="20">
+                Entrar com GitHub
+            </a>
+        </div>
     </form>
 </div>
 

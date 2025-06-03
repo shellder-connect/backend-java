@@ -17,9 +17,11 @@ public class HomeController {
                               @RequestParam(value = "logout", required = false) String logout,
                               Model model) {
         if (userDetails != null) {
-            model.addAttribute("username", userDetails.getUsername());
+//            model.addAttribute("username", userDetails.getUsername());
+            return "redirect:/redirect";
         }
         if (logout != null) {
+//            model.addAttribute("logoutMessage", "Logout realizado com sucesso.");
             model.addAttribute("logoutMessage", "Logout realizado com sucesso.");
         }
         return "login";

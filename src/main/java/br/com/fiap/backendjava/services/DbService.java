@@ -56,7 +56,7 @@ public class DbService {
         Endereco endereco10 = new Endereco(null, "Rua Aurora Boreal", "951", "Bela Vista", "São Paulo", "SP", "01310-000", "Cobertura");
         enderecoRepository.saveAll(Arrays.asList(endereco1, endereco2, endereco3, endereco4, endereco5, endereco6, endereco7, endereco8, endereco9, endereco10));
 
-        User admin = new User(null, "Patricia Naomi", "admin@email.com", pe.encode("123456"), Role.ADMIN, "11961393029", endereco1, LocalDate.of(1995, 5, 28), "382344935", true);
+        User admin = new User(null, "Patricia Naomi", "patricianaomiyama@gmail.com", pe.encode("123456"), Role.ADMIN, "11961393029", endereco1, LocalDate.of(1995, 5, 28), "382344935", true);
         User voluntario = new User(null, "João Silva", "voluntario@email.com", pe.encode("123456"), Role.VOLUNTARIO, "11999999999", endereco2, LocalDate.of(1995, 5, 28), "123456789", true);
         User voluntario2 = new User(null, "Ana Pereira", "voluntario2@email.com", pe.encode("123456"), Role.VOLUNTARIO, "11988888888", endereco7, LocalDate.of(1998, 1, 2), "987654321", true);
         User voluntario3 = new User(null, "Carlos Almeida", "voluntario3@email.com", pe.encode("123456"), Role.VOLUNTARIO, "11977777777", endereco8, LocalDate.of(1995, 5, 28), "123123123", true);

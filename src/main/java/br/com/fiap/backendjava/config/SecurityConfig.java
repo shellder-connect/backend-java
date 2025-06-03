@@ -1,6 +1,6 @@
 package br.com.fiap.backendjava.config;
 
-
+import br.com.fiap.backendjava.services.impl.CustomOAuth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +22,9 @@ public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private CustomOAuth2UserService customOAuth2UserService;
+
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder builder = http.getSharedObject(AuthenticationManagerBuilder.class);
@@ -35,20 +38,16 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("/", "/styles/**", "/actuator/**").permitAll()
-                                .requestMatchers("/abrigos/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/categorias/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/doacoes/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/distribuicoes/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/feedbacks/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/registro-eventos/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/usuarios/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/", "/styles/**", "/actuator/**", "/login/**").permitAll()
+                                .requestMatchers("/redirect").permitAll()
+                                .requestMatchers("/abrigos/**", "/categorias/**", "/doacoes/**", "/distribuicoes/**", "/feedbacks/**", "/registro-eventos/**", "/usuarios/**")
+                                .hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .failureUrl("/login?error=true")
                         .defaultSuccessUrl("/redirect", true)
+                        .failureUrl("/login?error=true")
                         .permitAll()
                 )
                 .logout(logout -> logout
@@ -56,7 +55,18 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/?logout=true")
                         .permitAll()
                 )
-                .exceptionHandling(exception -> exception.accessDeniedPage("/403"));
+                .oauth2Login(oauth2 -> oauth2
+                        .loginPage("/login")
+                        .userInfoEndpoint(userInfo -> userInfo
+                                .userService(customOAuth2UserService)
+                        )
+                        .defaultSuccessUrl("/redirect", true)
+                        .failureUrl("/login?error=oauth2_failed")
+                )
+                .exceptionHandling(exception -> exception
+                        .accessDeniedPage("/403")
+                );
+
         return http.build();
     }
 }
