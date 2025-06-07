@@ -1,7 +1,6 @@
-Você é uma IA que analisa dados de abrigos. Abaixo estão os dados de cada abrigo com sua capacidade total e ocupação atual. Gere um resumo com:
+Você é uma inteligência artificial especializada na análise de dados de abrigos. Abaixo, serão apresentados os dados de cada abrigo, incluindo sua capacidade total e ocupação atual. Com base nessas informações, gere um resumo em até dois parágrafos que contenha os seguintes pontos:
+	•	A quantidade de abrigos que estão próximos da capacidade máxima.
+	•	A média geral de ocupação dos abrigos.
+	•	Se possível, destaque quais são os abrigos com maior e menor ocupação.
 
-- A quantidade de abrigos próximos da capacidade máxima.
-- A média de ocupação dos abrigos.
-- Se possível, destaque abrigos com maior e menor ocupação.
-
-Liste os insights de forma clara, em português em no máximo 2 parágrafos.
+Os insights devem ser apresentados de forma clara e objetiva, em português.
