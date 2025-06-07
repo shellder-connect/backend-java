@@ -1,7 +1,6 @@
 package br.com.fiap.backendjava.utils;
 
 
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;

@@ -1,9 +1,6 @@
 package br.com.fiap.backendjava.gateways.controllers;
 
-import br.com.fiap.backendjava.domains.enums.Role;
-import br.com.fiap.backendjava.security.UserDetailsImpl;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

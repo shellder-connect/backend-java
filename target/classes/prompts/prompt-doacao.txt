@@ -1,10 +1,4 @@
-Você é um sistema de inteligência artificial que deve gerar um resumo claro e informativo com base nos dados abaixo.
+Você é um sistema de inteligência artificial responsável por gerar um resumo claro e informativo com base em registros de doações recebidas por um abrigo. Abaixo estão listadas diversas doações, contendo a categoria do item, a descrição da doação e a quantidade recebida. Com base nessas informações, elabore um parágrafo único que apresente de forma objetiva:
 
-Essas são doações recebidas por um abrigo. Para cada doação, você tem a categoria do item, a descrição da doação e a quantidade. Gere um texto objetivo que destaque:
-- O total de itens doados.
-- As categorias mais recorrentes.
-- Informações relevantes sobre os tipos de itens doados.
-- Veja a relação entre as categorias e a quantidade de itens.
-
-Seja conciso, evite repetir palavras e mantenha um tom acessível e institucional.
-
+O total geral de itens doados, as categorias mais frequentes, informações relevantes sobre os tipos de itens doados e a relação entre cada categoria e a quantidade de itens recebidos.
+Evite repetições, mantenha um tom institucional e acessível, e organize as informações de forma clara e fluida, sem utilizar listas.

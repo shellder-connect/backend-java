@@ -1,7 +1,6 @@
 package br.com.fiap.backendjava.services;
 
 import br.com.fiap.backendjava.domains.Distribuicao;
-import br.com.fiap.backendjava.domains.Doacao;
 
 import java.util.List;
 

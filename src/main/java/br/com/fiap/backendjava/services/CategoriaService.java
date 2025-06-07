@@ -1,6 +1,5 @@
 package br.com.fiap.backendjava.services;
 
-import br.com.fiap.backendjava.domains.Abrigo;
 import br.com.fiap.backendjava.domains.Categoria;
 
 import java.util.List;

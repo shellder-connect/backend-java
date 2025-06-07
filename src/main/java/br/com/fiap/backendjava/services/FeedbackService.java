@@ -1,6 +1,5 @@
 package br.com.fiap.backendjava.services;
 
-import br.com.fiap.backendjava.domains.Doacao;
 import br.com.fiap.backendjava.domains.Feedback;
 
 import java.util.List;
