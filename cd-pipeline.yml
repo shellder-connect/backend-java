@@ -1,0 +1,15 @@
+variables:
+  ConnectedServiceName: '749f4746-8b08-4480-937e-55d403d8d455'
+  WebAppKind: 'webAppLinux'
+  WebAppName: 'shellder-connection-global'
+  StartupCommand: 'java -jar backend-java-0.0.1-SNAPSHOT.jar'
+
+steps:
+  - task: AzureRmWebAppDeployment@4
+    displayName: 'Deploy Azure App Service'
+    inputs:
+      azureSubscription: '$(Parameters.ConnectedServiceName)'
+      appType: '$(Parameters.WebAppKind)'
+      WebAppName: '$(Parameters.WebAppName)'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/_CI - SHELLDER CONNECTION'
+      StartupCommand: '$(Parameters.StartupCommand)'
