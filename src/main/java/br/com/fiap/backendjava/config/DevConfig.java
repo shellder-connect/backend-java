@@ -29,7 +29,7 @@ public class DevConfig {
         }
 
         dbService.instantiateTestDatabase();
-        log.info("Banco de dados criado com sucesso e clinica inserida.");
+        log.info("Banco de dados criado com sucesso.");
         return true;
     }
 }
