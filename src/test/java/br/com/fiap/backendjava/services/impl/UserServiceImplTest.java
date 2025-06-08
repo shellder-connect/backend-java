@@ -6,6 +6,7 @@ import br.com.fiap.backendjava.domains.enums.Role;
 import br.com.fiap.backendjava.gateways.dtos.user.UserCreateDTO;
 import br.com.fiap.backendjava.gateways.repositories.UserRepository;
 import br.com.fiap.backendjava.mappers.UserMapper;
+import br.com.fiap.backendjava.producer.UserProducer;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
 import br.com.fiap.backendjava.security.UserDetailsServiceImpl;
 import br.com.fiap.backendjava.services.EmailService;
@@ -52,11 +53,14 @@ class UserServiceImplTest {
     @InjectMocks
     private UserServiceImpl userService;
 
+    @Mock
+    private UserProducer userProducer;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        userService = new UserServiceImpl(repository, mapper, passwordEncoder, emailService);
+        userService = new UserServiceImpl(repository, mapper, passwordEncoder, emailService, userProducer);
     }
 
     @Test

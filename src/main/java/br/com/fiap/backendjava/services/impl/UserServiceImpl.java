@@ -8,6 +8,7 @@ import br.com.fiap.backendjava.gateways.dtos.user.UserDetailDTO;
 import br.com.fiap.backendjava.gateways.dtos.user.UserUpdateDTO;
 import br.com.fiap.backendjava.gateways.repositories.UserRepository;
 import br.com.fiap.backendjava.mappers.UserMapper;
+import br.com.fiap.backendjava.producer.UserProducer;
 import br.com.fiap.backendjava.security.UserDetailsImpl;
 import br.com.fiap.backendjava.security.UserDetailsServiceImpl;
 import br.com.fiap.backendjava.services.EmailService;
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper mapper;
     private final PasswordEncoder passwordEncoder;
     private final EmailService emailService;
+    private final UserProducer userProducer;
 
     @Override
     public User criar(UserCreateDTO userCreateDTO) {
@@ -45,6 +47,13 @@ public class UserServiceImpl implements UserService {
 
         String mensagemEmail = String.format("Usuario %s criado com sucesso!", user.getNome());
         emailService.enviarEmail(user.getUsername(), "Cadastro Realizado", mensagemEmail);
+
+        userProducer.enviarMensagem(UserDetailDTO.builder()
+                .id(user.getId())
+                .nome(user.getNome())
+                .username(user.getUsername())
+                .role(user.getRole())
+                .build());
         return repository.save(user);
     }
 
