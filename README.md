@@ -1,3 +1,5 @@
+[![Sync GitHub Repo to Azure DevOps](https://github.com/shellder-connect/backend-java/actions/workflows/sync-to-azure-devops.yml/badge.svg)](https://github.com/shellder-connect/backend-java/actions/workflows/sync-to-azure-devops.yml)
+
 # 🐚 Shellder Connect
 
 O **Shellder Connect** é uma plataforma humanitária que conecta pessoas em situação de vulnerabilidade com redes de apoio locais. A proposta surgiu da necessidade de eliminar a desconexão entre quem precisa de ajuda e quem está disposto a ajudar, especialmente em situações emergenciais. Por meio da localização de abrigos, sistema inteligente de doações e cadastro de profissionais voluntários, o app promove acolhimento, solidariedade e impacto social real com tecnologia acessível e escalável.
