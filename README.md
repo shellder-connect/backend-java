@@ -1,7 +1,4 @@
-
-
 # 🐚 Shellder Connect
-[![Sync GitHub Repo to Azure DevOps](hhttps://github.com/shellder-connect/backend-java/actions/workflows/sync-to-azure-devops.yml/badge.svg)](https://github.com/shellder-connect/backend-java/actions/workflows/sync-to-azure-devops.yml)
 
 O **Shellder Connect** é uma plataforma humanitária que conecta pessoas em situação de vulnerabilidade com redes de apoio locais. A proposta surgiu da necessidade de eliminar a desconexão entre quem precisa de ajuda e quem está disposto a ajudar, especialmente em situações emergenciais. Por meio da localização de abrigos, sistema inteligente de doações e cadastro de profissionais voluntários, o app promove acolhimento, solidariedade e impacto social real com tecnologia acessível e escalável.
 
@@ -69,7 +66,7 @@ Disponibilizamos três vídeos para apresentar as etapas e funcionalidades do pr
 Neste vídeo pitch, apresentamos uma visão completa do projeto Shellder Connect, destacando sua proposta, funcionalidades e estrutura técnica.
 
 📌 Assista aqui:  
-[▶ Pitch Shellder Connect](https://www.youtube.com/watch?v=_-uMSjD0QO4&ab_channel=ClaudioBispo)
+[▶ Pitch Shellder Connect](https://youtu.be/-9nke1fOD30)
 
 ### 📦 _2. DevOps: CI/CD com Azure DevOps_
 Neste vídeo, mostramos todo o fluxo da esteira de integração e entrega contínua:
@@ -87,7 +84,7 @@ Este vídeo apresenta as funcionalidades principais da aplicação:
 - Arquitetura final da solução
 - Integrações com RabbitMQ e OpenAI
 
-📌 **Assista aqui:** [▶ Demonstração do Sistema Java](https://youtu.be/-vDVQu-9Jb0)
+📌 **Assista aqui:** [▶ Demonstração do Sistema Java](https://www.youtube.com/watch?v=H6_pE5DcYZQ&t=54s&ab_channel=PatriciaNaomi)
 
 Credencial usada para testes:
 
