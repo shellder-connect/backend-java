@@ -76,7 +76,7 @@ Neste vídeo, mostramos todo o fluxo da esteira de integração e entrega contí
 - Verificação da aplicação em execução e acesso via URL pública do Web App
 
 📌 Assista aqui:  
-[▶ CI/CD no Azure DevOps](https://www.youtube.com/watch?v=NSpdnWQZZNY&t=19s&ab_channel=PatriciaNaomi)
+[▶ CI/CD no Azure DevOps](https://youtu.be/NSpdnWQZZNY?si=1JaJRIKZs7bURKsd)
 
 ### 💻 _3. Demonstração do Sistema Java_
 Este vídeo apresenta as funcionalidades principais da aplicação:
@@ -84,7 +84,8 @@ Este vídeo apresenta as funcionalidades principais da aplicação:
 - Arquitetura final da solução
 - Integrações com RabbitMQ e OpenAI
 
-📌 **Assista aqui:** [▶ Demonstração do Sistema Java](https://www.youtube.com/watch?v=H6_pE5DcYZQ&t=54s&ab_channel=PatriciaNaomi)
+📌 **Assista aqui:** 
+[▶ Demonstração do Sistema Java](https://www.youtube.com/watch?v=H6_pE5DcYZQ&t=54s&ab_channel=PatriciaNaomi)
 
 Credencial usada para testes:
 
